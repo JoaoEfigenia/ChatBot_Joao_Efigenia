@@ -24,8 +24,12 @@ def obter_resposta(texto: str) -> str:
     respostas = {
          ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
          'como estás': 'Estou bem, obrigado!',
+         'como te chamas?': 'O meu nome é: Bot :)',
+         'tempo': 'Está um dia de sol!',
          ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...',
-     }
+         'horas': f'São: {datetime.now():%H:%M} horas',
+         'data': f'Hoje é dia: {datetime.now():%d-%m-%Y}',
+    }
 
      for chave, resposta in respostas.items():
          if isinstance(chave, tuple):
@@ -45,6 +49,8 @@ def chat() -> None:
 
     while True:
         user_input: str = input('Tu: ')
+        resposta: str = obter_resposta(user_input)
+        print(f'Bot: {resposta}')
 
         if resposta == 'Gostei de falar contigo! Até breve...':
             break
