@@ -22,30 +22,34 @@ def obter_resposta(texto: str) -> str:
     # return f'Desculpa, não entendi a questão! {texto}'
 
     respostas = {
-         ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
-         'como estás': 'Estou bem, obrigado!',
-         'como te chamas?': 'O meu nome é: Bot :)',
-         'tempo': 'Está um dia de sol!',
-         ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...',
-         'horas': f'São: {datetime.now():%H:%M} horas',
-         'data': f'Hoje é dia: {datetime.now():%d-%m-%Y}',
+        ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
+        'como estás': 'Estou bem, obrigado!',
+        'como te chamas?': 'O meu nome é: Bot :)',
+        'tempo': 'Está um dia de sol!',
+        ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...',
+        'horas': f'São: {datetime.now():%H:%M} horas',
+        'data': f'Hoje é dia: {datetime.now():%d-%m-%Y}',
+        'qual é o teu animal favorito?': 'Adoro cães, mas só consigo interagir com tamagotchis...',
+        'podes ajudar-me com matemática?': 'Claro! Posso ajudar com operações básicas.',
+        'qual é o teu livro favorito?': 'Gosto de "1984" de George Orwell.',
+        'gostas de viajar?': 'Adorava, mas fico aqui pelo computador :)',
+        'qual é a tua música favorita?': 'Gosto de música eletrónica, faz-me querer poder dançar um dia!',
     }
 
-     for chave, resposta in respostas.items():
+    for chave, resposta in respostas.items():
          if isinstance(chave, tuple):
              if comando in chave:
                  return resposta
          elif chave in comando:
              return resposta
 
-     return f'Desculpa, não entendi a questão! {texto}'
-
+    return f'Desculpa, não entendi a questão! {texto}'
 
 def chat() -> None:
     print('Bem-vindo ao ChatBot!')
     print('Escreva "bye" para sair do chat')
     name: str = input('Bot: Como te chamas? ')
-    print(f'Bot: Olá, {name}! \n Como te posso ajudar?')
+    print(f'Bot: Olá, {name}! \nComo te posso ajudar?')
 
     while True:
         user_input: str = input('Tu: ')
@@ -58,11 +62,9 @@ def chat() -> None:
     print('Chat acabou')
     print()
 
-
 def main() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
     chat()
-
 
 if __name__ == '__main__':
     main()
