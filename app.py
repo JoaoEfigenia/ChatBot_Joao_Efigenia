@@ -34,6 +34,11 @@ def obter_resposta(texto: str) -> str:
         'qual é o teu livro favorito?': 'Gosto de "1984" de George Orwell.',
         'gostas de viajar?': 'Adorava, mas fico aqui pelo computador :)',
         'qual é a tua música favorita?': 'Gosto de música eletrónica, faz-me querer poder dançar um dia!',
+        'qual é a tua linguagem de programação favorita?': 'Python, claro!',
+        'qual é a tua comida favorita?': 'Pizza é sempre uma boa escolha!',
+        'qual é o teu filme favorito?': 'Adoro Matrix, é um clássico!',
+        'podes ajudar-me com matemática?': 'Claro! Posso ajudar com operações básicas.',
+        'tens irmãos?': 'Sou filho único, mas conheço outros bots! Um deles não gosta nada do Arnold Schwarzenegger...',
     }
 
     for chave, resposta in respostas.items():
